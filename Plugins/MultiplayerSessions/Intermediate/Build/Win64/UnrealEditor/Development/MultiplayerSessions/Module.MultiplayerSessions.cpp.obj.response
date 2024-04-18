@@ -1,6 +1,6 @@
-D:\UnrealProjects\XLRTestMultiplayerRepo\XLRRaiders\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\Development\MultiplayerSessions\Module.MultiplayerSessions.cpp
+D:\UnrealProjects\XLRRaiders\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\Development\MultiplayerSessions\Module.MultiplayerSessions.cpp
 /I .
-/I D:\UnrealProjects\XLRTestMultiplayerRepo\XLRRaiders\Plugins\MultiplayerSessions\Source\MultiplayerSessions\Private
+/I D:\UnrealProjects\XLRRaiders\Plugins\MultiplayerSessions\Source\MultiplayerSessions\Private
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\CoreUObject
 /I Runtime
 /I Runtime\CoreUObject\Public
@@ -252,9 +252,9 @@ D:\UnrealProjects\XLRTestMultiplayerRepo\XLRRaiders\Plugins\MultiplayerSessions\
 /I Runtime\ClothingSystemRuntimeInterface\Public
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\AnimationDataController
 /I Developer\AnimationDataController\Public
-/I D:\UnrealProjects\XLRTestMultiplayerRepo\XLRRaiders\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\Inc\MultiplayerSessions
-/I D:\UnrealProjects\XLRTestMultiplayerRepo\XLRRaiders\Plugins\MultiplayerSessions\Source
-/I D:\UnrealProjects\XLRTestMultiplayerRepo\XLRRaiders\Plugins\MultiplayerSessions\Source\MultiplayerSessions\Public
+/I D:\UnrealProjects\XLRRaiders\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\Inc\MultiplayerSessions
+/I D:\UnrealProjects\XLRRaiders\Plugins\MultiplayerSessions\Source
+/I D:\UnrealProjects\XLRRaiders\Plugins\MultiplayerSessions\Source\MultiplayerSessions\Public
 /I ..\Plugins\Online\OnlineSubsystem\Intermediate\Build\Win64\UnrealEditor\Inc\OnlineSubsystem
 /I ..\Plugins\Online\OnlineSubsystem
 /I ..\Plugins\Online\OnlineSubsystem\Source
@@ -289,12 +289,12 @@ D:\UnrealProjects\XLRTestMultiplayerRepo\XLRRaiders\Plugins\MultiplayerSessions\
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt"
-/FI"D:\UnrealProjects\XLRTestMultiplayerRepo\XLRRaiders\Intermediate\Build\Win64\XLRTestMultiplayerEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/FI"D:\UnrealProjects\XLRTestMultiplayerRepo\XLRRaiders\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\Development\MultiplayerSessions\Definitions.MultiplayerSessions.h"
-/Yu"D:\UnrealProjects\XLRTestMultiplayerRepo\XLRRaiders\Intermediate\Build\Win64\XLRTestMultiplayerEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Fp"D:\UnrealProjects\XLRTestMultiplayerRepo\XLRRaiders\Intermediate\Build\Win64\XLRTestMultiplayerEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
-/Fo"D:\UnrealProjects\XLRTestMultiplayerRepo\XLRRaiders\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\Development\MultiplayerSessions\Module.MultiplayerSessions.cpp.obj"
-/sourceDependencies D:\UnrealProjects\XLRTestMultiplayerRepo\XLRRaiders\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\Development\MultiplayerSessions\Module.MultiplayerSessions.cpp.json
+/FI"D:\UnrealProjects\XLRRaiders\Intermediate\Build\Win64\XLRTestMultiplayerEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/FI"D:\UnrealProjects\XLRRaiders\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\Development\MultiplayerSessions\Definitions.MultiplayerSessions.h"
+/Yu"D:\UnrealProjects\XLRRaiders\Intermediate\Build\Win64\XLRTestMultiplayerEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Fp"D:\UnrealProjects\XLRRaiders\Intermediate\Build\Win64\XLRTestMultiplayerEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
+/Fo"D:\UnrealProjects\XLRRaiders\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\Development\MultiplayerSessions\Module.MultiplayerSessions.cpp.obj"
+/sourceDependencies D:\UnrealProjects\XLRRaiders\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\Development\MultiplayerSessions\Module.MultiplayerSessions.cpp.json
 /Zc:inline
 /nologo
 /Oi
