@@ -37,14 +37,21 @@ protected:
 	UFUNCTION(NetMulticast, Reliable)
 		void MulticastFire(const FVector_NetQuantize& TraceHitTarget);
 
-
-
+	void SetHUDCrosshairs(float DeltaTime);
 
 private:
 	class ABlasterCharacter* Character;
+	class AXLRPlayerController* Controller;
+	class AXLRHUD* HUD;
+
 	class AWeapon* EquippedWeapon;
 
 	bool bFireButtonPressed;
+
+
+	//HUD
+
+	float CrosshairVelocityFactor;
 
 public:
 	// Called every frame
