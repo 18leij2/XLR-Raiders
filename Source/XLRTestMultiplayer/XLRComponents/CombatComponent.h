@@ -29,6 +29,8 @@ protected:
 
 	void FireButtonPressed(bool bPressed);
 
+	void Fire();
+
 	void TraceUnderCrosshairs(FHitResult& TraceHitResult);
 
 	UFUNCTION(Server, Reliable)
@@ -52,6 +54,15 @@ private:
 	//HUD
 
 	float CrosshairVelocityFactor;
+
+	//Automatic Fire
+
+	FTimerHandle FireTimer;
+
+	bool bCanFire = true;
+
+	void StartFireTimer();
+	void FireTimerFinished();
 
 public:
 	// Called every frame

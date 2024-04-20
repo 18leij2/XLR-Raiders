@@ -2,6 +2,8 @@
 
 
 #include "XLRHUD.h"
+#include "GameFramework/PlayerController.h"
+#include "CharacterOverlay.h"
 
 void AXLRHUD::DrawHUD()
 {
@@ -64,4 +66,21 @@ void AXLRHUD::DrawCrosshair(UTexture2D* Texture, FVector2D ViewportCenter, FVect
 		1.f,
 		FLinearColor::White
 	);
+}
+
+void AXLRHUD::BeginPlay()
+{
+	Super::BeginPlay();
+
+	AddCharacterOverlay();
+}
+
+void AXLRHUD::AddCharacterOverlay()
+{
+	APlayerController* PlayerController = GetOwningPlayerController();
+	if (PlayerController && CharacterOverlayClass)
+	{
+		CharacterOverlay = CreateWidget<UCharacterOverlay>(PlayerController, CharacterOverlayClass);
+		CharacterOverlay->AddToViewport();
+	}
 }

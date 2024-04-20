@@ -21,8 +21,6 @@ public:
 
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
-	UFUNCTION(NetMulticast, Unreliable)
-		void MulticastHit();
 
 protected:
 	// Called when the game starts or when spawned
@@ -38,6 +36,9 @@ protected:
 
 	void EquipButtonPressed();
 
+	UFUNCTION()
+	void ReceiveDamage(AActor* DamagedActor, float Damage, const UDamageType* DamageType, class AController* InstigatorController, AActor* DamageCauser);
+	void UpdateHUDHealth();
 private:
 	UPROPERTY(VisibleAnywhere, Category = Camera)
 		class USpringArmComponent* CameraBoom;
@@ -53,6 +54,21 @@ private:
 
 	UFUNCTION(Server, Reliable)
 		void ServerEquipButtonPressed();
+
+	//Player Health
+	
+	UPROPERTY(EditAnywhere, Category = "Player Stats")
+	float MaxHealth = 100.f;
+
+	UPROPERTY(ReplicatedUsing = OnRep_Health, VisibleAnywhere, Category = "PlayerStats")
+		float Health = 100.f;
+
+	UFUNCTION()
+		void OnRep_Health();
+
+	class AXLRPlayerController* XLRPlayerController;
+
+
 public:
 	FORCEINLINE void SetOverlappingWeapon(AWeapon* Weapon) { OverlappingWeapon = Weapon; }
 

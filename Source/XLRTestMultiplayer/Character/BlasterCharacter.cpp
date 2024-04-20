@@ -8,6 +8,7 @@
 #include "XLRTestMultiplayer/XLRComponents/CombatComponent.h"
 #include "Net/UnrealNetwork.h"
 #include "XLRTestMultiplayer/XLRTestMultiplayer.h"
+#include "XLRTestMultiplayer/PlayerController/XLRPlayerController.h"
 
 // Sets default values
 ABlasterCharacter::ABlasterCharacter()
@@ -36,6 +37,13 @@ void ABlasterCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 
+	UpdateHUDHealth();
+
+	if (HasAuthority()) 
+	{
+		OnTakeAnyDamage.AddDynamic(this, &ABlasterCharacter::ReceiveDamage);
+	}
+
 }
 
 void ABlasterCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
@@ -43,6 +51,8 @@ void ABlasterCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Ou
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
 	DOREPLIFETIME(ABlasterCharacter, OverlappingWeapon);
+
+	DOREPLIFETIME(ABlasterCharacter, Health);
 }
 
 
@@ -147,15 +157,35 @@ void ABlasterCharacter::EquipButtonPressed()
 	}
 }
 
-void ABlasterCharacter::MulticastHit_Implementation()
+void ABlasterCharacter::OnRep_Health()
 {
-	//Call HitReaction Monatage
+	UpdateHUDHealth();
+	//Play Hit Reaction
+	
 }
+
 
 void ABlasterCharacter::ServerEquipButtonPressed_Implementation()
 {
 	if (Combat)
 	{
 		Combat->EquipWeapon(OverlappingWeapon);
+	}
+}
+
+void ABlasterCharacter::ReceiveDamage(AActor* DamagedActor, float Damage, const UDamageType* DamageType, class AController* InstigatorController, AActor* DamageCauser)
+{
+	Health = FMath::Clamp(Health - Damage, 0.f, MaxHealth);
+	UpdateHUDHealth();
+	//Play Hit Reaction
+
+}
+
+void ABlasterCharacter::UpdateHUDHealth()
+{
+	XLRPlayerController = XLRPlayerController == nullptr ? Cast<AXLRPlayerController>(Controller) : XLRPlayerController;
+	if (XLRPlayerController)
+	{
+		XLRPlayerController->SetHUDHealth(Health, MaxHealth);
 	}
 }
