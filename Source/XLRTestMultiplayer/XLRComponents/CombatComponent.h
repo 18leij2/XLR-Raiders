@@ -64,6 +64,8 @@ private:
 	void StartFireTimer();
 	void FireTimerFinished();
 
+	FVector HitTarget;
+
 public:
 	// Called every frame
 
