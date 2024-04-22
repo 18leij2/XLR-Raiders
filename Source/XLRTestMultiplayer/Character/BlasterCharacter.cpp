@@ -9,7 +9,7 @@
 #include "Net/UnrealNetwork.h"
 #include "XLRTestMultiplayer/XLRTestMultiplayer.h"
 #include "XLRTestMultiplayer/PlayerController/XLRPlayerController.h"
-
+#include "XLRTestMultiplayer/GameModes/XLRGameMode.h"
 // Sets default values
 ABlasterCharacter::ABlasterCharacter()
 {
@@ -178,6 +178,17 @@ void ABlasterCharacter::ReceiveDamage(AActor* DamagedActor, float Damage, const 
 	Health = FMath::Clamp(Health - Damage, 0.f, MaxHealth);
 	UpdateHUDHealth();
 	//Play Hit Reaction
+	
+	if (Health == 0.f)
+	{
+		AXLRGameMode* XLRGameMode = GetWorld()->GetAuthGameMode<AXLRGameMode>();
+		if (XLRGameMode)
+		{
+			XLRPlayerController = XLRPlayerController == nullptr ? Cast<AXLRPlayerController>(Controller) : XLRPlayerController;
+			AXLRPlayerController* AttackerController = Cast<AXLRPlayerController>(InstigatorController);
+			XLRGameMode->PlayerEliminated(this, XLRPlayerController, AttackerController);
+		}
+	}
 
 }
 
@@ -187,5 +198,20 @@ void ABlasterCharacter::UpdateHUDHealth()
 	if (XLRPlayerController)
 	{
 		XLRPlayerController->SetHUDHealth(Health, MaxHealth);
+	}
+}
+
+void ABlasterCharacter::Elim()
+{
+	bElim = true;
+	PlayDeathMontage();
+}
+
+void ABlasterCharacter::PlayDeathMontage()
+{
+	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
+	if (AnimInstance && DeathMontage)
+	{
+		AnimInstance->Montage_Play(DeathMontage);
 	}
 }

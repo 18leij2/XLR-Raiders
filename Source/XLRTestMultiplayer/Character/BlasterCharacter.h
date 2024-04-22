@@ -20,6 +20,8 @@ public:
 	virtual void PostInitializeComponents() override;
 
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+	void Elim();
+	void PlayDeathMontage();
 
 
 protected:
@@ -55,21 +57,29 @@ private:
 	UFUNCTION(Server, Reliable)
 		void ServerEquipButtonPressed();
 
+	UPROPERTY(EditAnywhere, Category = Combat)
+		UAnimMontage* DeathMontage;
+
 	//Player Health
 	
-	UPROPERTY(EditAnywhere, Category = "Player Stats")
+	UPROPERTY(EditAnywhere, Category = PlayerStats)
 	float MaxHealth = 100.f;
 
-	UPROPERTY(ReplicatedUsing = OnRep_Health, VisibleAnywhere, Category = "PlayerStats")
+	UPROPERTY(ReplicatedUsing = OnRep_Health, VisibleAnywhere, Category = PlayerStats)
 		float Health = 100.f;
 
 	UFUNCTION()
 		void OnRep_Health();
 
+	bool bElim = false;
+
+
 	class AXLRPlayerController* XLRPlayerController;
 
+	
 
 public:
 	FORCEINLINE void SetOverlappingWeapon(AWeapon* Weapon) { OverlappingWeapon = Weapon; }
+	FORCEINLINE bool IsElimmed() const { return bElim;  }
 
 };

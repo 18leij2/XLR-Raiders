@@ -1,6 +1,6 @@
-D:\UnrealProjects\XLRRaiders\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\Development\MultiplayerSessions\Module.MultiplayerSessions.gen.cpp
+D:\UnrealProjects\XLRTestMultiplayer\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\Development\MultiplayerSessions\Module.MultiplayerSessions.gen.cpp
 /I .
-/I D:\UnrealProjects\XLRRaiders\Plugins\MultiplayerSessions\Source\MultiplayerSessions\Private
+/I D:\UnrealProjects\XLRTestMultiplayer\Plugins\MultiplayerSessions\Source\MultiplayerSessions\Private
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\CoreUObject
 /I Runtime
 /I Runtime\CoreUObject\Public
@@ -252,9 +252,9 @@ D:\UnrealProjects\XLRRaiders\Plugins\MultiplayerSessions\Intermediate\Build\Win6
 /I Runtime\ClothingSystemRuntimeInterface\Public
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\AnimationDataController
 /I Developer\AnimationDataController\Public
-/I D:\UnrealProjects\XLRRaiders\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\Inc\MultiplayerSessions
-/I D:\UnrealProjects\XLRRaiders\Plugins\MultiplayerSessions\Source
-/I D:\UnrealProjects\XLRRaiders\Plugins\MultiplayerSessions\Source\MultiplayerSessions\Public
+/I D:\UnrealProjects\XLRTestMultiplayer\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\Inc\MultiplayerSessions
+/I D:\UnrealProjects\XLRTestMultiplayer\Plugins\MultiplayerSessions\Source
+/I D:\UnrealProjects\XLRTestMultiplayer\Plugins\MultiplayerSessions\Source\MultiplayerSessions\Public
 /I ..\Plugins\Online\OnlineSubsystem\Intermediate\Build\Win64\UnrealEditor\Inc\OnlineSubsystem
 /I ..\Plugins\Online\OnlineSubsystem
 /I ..\Plugins\Online\OnlineSubsystem\Source
@@ -289,12 +289,12 @@ D:\UnrealProjects\XLRRaiders\Plugins\MultiplayerSessions\Intermediate\Build\Win6
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt"
-/FI"D:\UnrealProjects\XLRRaiders\Intermediate\Build\Win64\XLRTestMultiplayerEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/FI"D:\UnrealProjects\XLRRaiders\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\Development\MultiplayerSessions\Definitions.MultiplayerSessions.h"
-/Yu"D:\UnrealProjects\XLRRaiders\Intermediate\Build\Win64\XLRTestMultiplayerEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Fp"D:\UnrealProjects\XLRRaiders\Intermediate\Build\Win64\XLRTestMultiplayerEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
-/Fo"D:\UnrealProjects\XLRRaiders\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\Development\MultiplayerSessions\Module.MultiplayerSessions.gen.cpp.obj"
-/sourceDependencies D:\UnrealProjects\XLRRaiders\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\Development\MultiplayerSessions\Module.MultiplayerSessions.gen.cpp.json
+/FI"D:\UnrealProjects\XLRTestMultiplayer\Intermediate\Build\Win64\XLRTestMultiplayerEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/FI"D:\UnrealProjects\XLRTestMultiplayer\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\Development\MultiplayerSessions\Definitions.MultiplayerSessions.h"
+/Yu"D:\UnrealProjects\XLRTestMultiplayer\Intermediate\Build\Win64\XLRTestMultiplayerEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Fp"D:\UnrealProjects\XLRTestMultiplayer\Intermediate\Build\Win64\XLRTestMultiplayerEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
+/Fo"D:\UnrealProjects\XLRTestMultiplayer\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\Development\MultiplayerSessions\Module.MultiplayerSessions.gen.cpp.obj"
+/sourceDependencies D:\UnrealProjects\XLRTestMultiplayer\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\Development\MultiplayerSessions\Module.MultiplayerSessions.gen.cpp.json
 /Zc:inline
 /nologo
 /Oi
