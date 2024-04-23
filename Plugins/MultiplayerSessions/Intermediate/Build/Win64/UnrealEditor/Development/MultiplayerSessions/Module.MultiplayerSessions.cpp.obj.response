@@ -1,6 +1,6 @@
-D:\UnrealProjects\XLRTestMultiplayer\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\Development\MultiplayerSessions\Module.MultiplayerSessions.cpp
+"D:\downloads and files\Stuff\School\LMC 4710\XLRRaiders\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\Development\MultiplayerSessions\Module.MultiplayerSessions.cpp"
 /I .
-/I D:\UnrealProjects\XLRTestMultiplayer\Plugins\MultiplayerSessions\Source\MultiplayerSessions\Private
+/I "D:\downloads and files\Stuff\School\LMC 4710\XLRRaiders\Plugins\MultiplayerSessions\Source\MultiplayerSessions\Private"
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\CoreUObject
 /I Runtime
 /I Runtime\CoreUObject\Public
@@ -252,9 +252,9 @@ D:\UnrealProjects\XLRTestMultiplayer\Plugins\MultiplayerSessions\Intermediate\Bu
 /I Runtime\ClothingSystemRuntimeInterface\Public
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\AnimationDataController
 /I Developer\AnimationDataController\Public
-/I D:\UnrealProjects\XLRTestMultiplayer\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\Inc\MultiplayerSessions
-/I D:\UnrealProjects\XLRTestMultiplayer\Plugins\MultiplayerSessions\Source
-/I D:\UnrealProjects\XLRTestMultiplayer\Plugins\MultiplayerSessions\Source\MultiplayerSessions\Public
+/I "D:\downloads and files\Stuff\School\LMC 4710\XLRRaiders\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\Inc\MultiplayerSessions"
+/I "D:\downloads and files\Stuff\School\LMC 4710\XLRRaiders\Plugins\MultiplayerSessions\Source"
+/I "D:\downloads and files\Stuff\School\LMC 4710\XLRRaiders\Plugins\MultiplayerSessions\Source\MultiplayerSessions\Public"
 /I ..\Plugins\Online\OnlineSubsystem\Intermediate\Build\Win64\UnrealEditor\Inc\OnlineSubsystem
 /I ..\Plugins\Online\OnlineSubsystem
 /I ..\Plugins\Online\OnlineSubsystem\Source
@@ -283,18 +283,18 @@ D:\UnrealProjects\XLRTestMultiplayer\Plugins\MultiplayerSessions\Intermediate\Bu
 /I ThirdParty\PhysX3\PhysX_3.4\Include\common
 /I ThirdParty\PhysX3\PhysX_3.4\Include\extensions
 /I ThirdParty\PhysX3\PhysX_3.4\Include\geometry
-/I "D:\Microsoft Visual Studio\2019\VC\Tools\MSVC\14.29.30133\INCLUDE"
+/I "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE"
 /I "C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"
-/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt"
-/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared"
-/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um"
-/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt"
-/FI"D:\UnrealProjects\XLRTestMultiplayer\Intermediate\Build\Win64\XLRTestMultiplayerEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/FI"D:\UnrealProjects\XLRTestMultiplayer\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\Development\MultiplayerSessions\Definitions.MultiplayerSessions.h"
-/Yu"D:\UnrealProjects\XLRTestMultiplayer\Intermediate\Build\Win64\XLRTestMultiplayerEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Fp"D:\UnrealProjects\XLRTestMultiplayer\Intermediate\Build\Win64\XLRTestMultiplayerEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
-/Fo"D:\UnrealProjects\XLRTestMultiplayer\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\Development\MultiplayerSessions\Module.MultiplayerSessions.cpp.obj"
-/sourceDependencies D:\UnrealProjects\XLRTestMultiplayer\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\Development\MultiplayerSessions\Module.MultiplayerSessions.cpp.json
+/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt"
+/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared"
+/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um"
+/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt"
+/FI"D:\downloads and files\Stuff\School\LMC 4710\XLRRaiders\Intermediate\Build\Win64\XLRTestMultiplayerEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/FI"D:\downloads and files\Stuff\School\LMC 4710\XLRRaiders\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\Development\MultiplayerSessions\Definitions.MultiplayerSessions.h"
+/Yu"D:\downloads and files\Stuff\School\LMC 4710\XLRRaiders\Intermediate\Build\Win64\XLRTestMultiplayerEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Fp"D:\downloads and files\Stuff\School\LMC 4710\XLRRaiders\Intermediate\Build\Win64\XLRTestMultiplayerEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
+/Fo"D:\downloads and files\Stuff\School\LMC 4710\XLRRaiders\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\Development\MultiplayerSessions\Module.MultiplayerSessions.cpp.obj"
+/sourceDependencies "D:\downloads and files\Stuff\School\LMC 4710\XLRRaiders\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\Development\MultiplayerSessions\Module.MultiplayerSessions.cpp.json"
 /Zc:inline
 /nologo
 /Oi
