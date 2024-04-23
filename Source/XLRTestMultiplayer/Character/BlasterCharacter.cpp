@@ -10,6 +10,7 @@
 #include "XLRTestMultiplayer/XLRTestMultiplayer.h"
 #include "XLRTestMultiplayer/PlayerController/XLRPlayerController.h"
 #include "XLRTestMultiplayer/GameModes/XLRGameMode.h"
+#include "TimerManager.h"
 // Sets default values
 ABlasterCharacter::ABlasterCharacter()
 {
@@ -28,8 +29,11 @@ ABlasterCharacter::ABlasterCharacter()
 
 	Combat = CreateDefaultSubobject<UCombatComponent>(TEXT("CombatComponent"));
 	Combat->SetIsReplicated(true);
-
 	GetMesh()->SetCollisionObjectType(ECC_SkeletalMesh);
+
+	GetMesh()->SetCollisionResponseToChannel(ECollisionChannel::ECC_Camera, ECollisionResponse::ECR_Ignore);
+	GetMesh()->SetCollisionResponseToChannel(ECollisionChannel::ECC_Visibility, ECollisionResponse::ECR_Block);
+
 }
 
 // Called when the game starts or when spawned
@@ -175,7 +179,12 @@ void ABlasterCharacter::ServerEquipButtonPressed_Implementation()
 
 void ABlasterCharacter::ReceiveDamage(AActor* DamagedActor, float Damage, const UDamageType* DamageType, class AController* InstigatorController, AActor* DamageCauser)
 {
-	Health = FMath::Clamp(Health - Damage, 0.f, MaxHealth);
+
+	FVector2D WalkSpeedRange(0.f, Cast<ABlasterCharacter>(DamageCauser->GetOwner())->GetCharacterMovement()->MaxWalkSpeed);
+	FVector2D VelocityMultiplierRange(1.f, 2.f);
+	float ModifiedVelocity = FMath::GetMappedRangeValueClamped(WalkSpeedRange, VelocityMultiplierRange, DamageCauser->GetOwner()->GetVelocity().Size());
+	float ModifiedDamage = Damage * ModifiedVelocity;
+	Health = FMath::Clamp(Health - ModifiedDamage, 0.f, MaxHealth);
 	UpdateHUDHealth();
 	//Play Hit Reaction
 	
@@ -203,8 +212,29 @@ void ABlasterCharacter::UpdateHUDHealth()
 
 void ABlasterCharacter::Elim()
 {
+	MulticastElim();
+	GetWorldTimerManager().SetTimer(
+		ElimTimer,
+		this,
+		&ABlasterCharacter::ElimTimerFinished,
+		ElimDelay
+	);
+}
+
+void ABlasterCharacter::MulticastElim_Implementation()
+{
 	bElim = true;
 	PlayDeathMontage();
+}
+
+void ABlasterCharacter::ElimTimerFinished()
+{
+	AXLRGameMode* XLRGameMode = GetWorld()->GetAuthGameMode<AXLRGameMode>();
+	if (XLRGameMode)
+	{
+		XLRGameMode->RequestRespawn(this, Controller);
+		UpdateHUDHealth();
+	}
 }
 
 void ABlasterCharacter::PlayDeathMontage()
@@ -215,3 +245,4 @@ void ABlasterCharacter::PlayDeathMontage()
 		AnimInstance->Montage_Play(DeathMontage);
 	}
 }
+

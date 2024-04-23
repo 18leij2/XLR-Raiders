@@ -20,7 +20,11 @@ public:
 	virtual void PostInitializeComponents() override;
 
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+	
 	void Elim();
+
+	UFUNCTION(NetMulticast, Reliable)
+	void MulticastElim();
 	void PlayDeathMontage();
 
 
@@ -76,7 +80,10 @@ private:
 
 	class AXLRPlayerController* XLRPlayerController;
 
-	
+	FTimerHandle ElimTimer;
+	UPROPERTY(EditDefaultsOnly)
+	float ElimDelay = 3.f;
+	void ElimTimerFinished();
 
 public:
 	FORCEINLINE void SetOverlappingWeapon(AWeapon* Weapon) { OverlappingWeapon = Weapon; }

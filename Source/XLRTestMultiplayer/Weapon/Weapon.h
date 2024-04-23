@@ -22,7 +22,6 @@ class XLRTESTMULTIPLAYER_API AWeapon : public AActor
 
 public:
 
-
 	AWeapon();
 	virtual void Tick(float DeltaTime) override;
 
@@ -72,11 +71,8 @@ private:
 	UPROPERTY(VisibleAnywhere, Category = "Weapon Properties")
 		class USphereComponent* AreaSphere;
 
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere, Category = "Weapon Properties")
 		EWeaponState WeaponState;
-
-	//Automatic Fire
-
 	
 
 public:

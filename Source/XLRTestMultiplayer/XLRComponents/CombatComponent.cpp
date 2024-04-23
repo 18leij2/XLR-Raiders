@@ -11,7 +11,7 @@
 #include "XLRTestMultiplayer/HUD/XLRHUD.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "TimerManager.h"
-
+#include "Net/UnrealNetwork.h"
 
 UCombatComponent::UCombatComponent()
 {
@@ -28,6 +28,12 @@ void UCombatComponent::BeginPlay()
 
 }
 
+void UCombatComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+	DOREPLIFETIME(UCombatComponent, EquippedWeapon);
+}
 
 void UCombatComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
@@ -93,11 +99,12 @@ void UCombatComponent::SetHUDCrosshairs(float DeltaTime)
 
 }
 
-void UCombatComponent::EquipWeapon(AWeapon* WeaponToEQuip)
-{
-	if (Character == nullptr || WeaponToEQuip == nullptr) return;
 
-	EquippedWeapon = WeaponToEQuip;
+void UCombatComponent::EquipWeapon(AWeapon* WeaponToEquip)
+{
+	if (Character == nullptr || WeaponToEquip == nullptr) return;
+
+	EquippedWeapon = WeaponToEquip;
 	EquippedWeapon->SetWeaponState(EWeaponState::EWS_Equipped);
 	const USkeletalMeshSocket* HandSocket = Character->GetMesh()->GetSocketByName(FName("RightHandSocket"));
 	if (HandSocket)
@@ -131,15 +138,18 @@ void UCombatComponent::Fire()
 
 void UCombatComponent::ServerFire_Implementation(const FVector_NetQuantize& TraceHitTarget)
 {
+
 	MulticastFire(TraceHitTarget);
 }
 
 void UCombatComponent::MulticastFire_Implementation(const FVector_NetQuantize& TraceHitTarget)
 {
 	if (EquippedWeapon == nullptr) return;
+	
 	if (Character)
 	{
 		EquippedWeapon->Fire(TraceHitTarget);
+		
 	}
 }
 
@@ -181,19 +191,27 @@ void UCombatComponent::TraceUnderCrosshairs(FHitResult& TraceHitResult)
 			End,
 			ECollisionChannel::ECC_Visibility
 		);
+
+		if (!TraceHitResult.bBlockingHit)
+		{
+			TraceHitResult.ImpactPoint = End;
+		}
 	}
 }
 
 void UCombatComponent::StartFireTimer()
 {
-	if (EquippedWeapon == nullptr || Character == nullptr) return;
-
+	if (EquippedWeapon == nullptr || Character == nullptr) {
+		bCanFire = true;
+		return;
+	}
 	Character->GetWorldTimerManager().SetTimer(
 		FireTimer,
 		this,
 		&UCombatComponent::FireTimerFinished,
 		EquippedWeapon->FireDelay
 	);
+
 }
 
 

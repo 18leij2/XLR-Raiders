@@ -19,10 +19,11 @@ public:
 	// Sets default values for this component's properties
 	UCombatComponent();
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
 	friend class ABlasterCharacter;
 
-	void EquipWeapon(AWeapon* WeaponToEQuip);
+	void EquipWeapon(class AWeapon* WeaponToEQuip);
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
@@ -46,7 +47,8 @@ private:
 	class AXLRPlayerController* Controller;
 	class AXLRHUD* HUD;
 
-	class AWeapon* EquippedWeapon;
+	UPROPERTY(Replicated)
+	AWeapon* EquippedWeapon;
 
 	bool bFireButtonPressed;
 

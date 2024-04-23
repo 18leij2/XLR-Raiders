@@ -16,4 +16,7 @@ class XLRTESTMULTIPLAYER_API ATransistionLobbyGameMode : public AGameMode
 	
 public: 
 	virtual void PostLogin(APlayerController* NewPlayer) override;
+private:
+	UPROPERTY(EditAnywhere, Category = LobbySettings)
+	int32 LobbySize = 2;
 };
