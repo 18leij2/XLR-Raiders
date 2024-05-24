@@ -12,7 +12,7 @@ LMB - Fire\
 E - Interact
 
 ## Project Setup
-Download the included zip file, and run the Unreal Build. Windows Required.
+Follow the instructions [here](https://pyadav60.itch.io/xlr-raiders).
 
 Multiplayer Instructions:
 Both parties install the zip and launch the game
