@@ -14,10 +14,7 @@ E - Interact
 ## Project Setup
 Follow the instructions [here](https://pyadav60.itch.io/xlr-raiders).
 
-Multiplayer Instructions:
-Both parties install the zip and launch the game
-Both parties open Steam, ensure local download regions are the same
-One party hosts, the other joins
+This game is an Unreal project. To access it, download the project as a ZIP, extract the folder, and open the `.uproject` file with Unreal Engine.
 
 ## Contributors
 Prateek Yadav\
